@@ -17,6 +17,7 @@ const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 class App extends Component {
 
+  // initial state where all values are empty
   state = {
     temp: '',
     city: '',
@@ -30,11 +31,20 @@ class App extends Component {
 
 
     console.log('in get weather', items)
-
+    // set fetch to variable api_call
+    // string interpolation with city and country that is passed in through props from Form component
+    // 'units=Imperial' is to bring back the temperature as fahrenheight
     const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${items.city},${items.country}&APPID=${API_KEY}&units=Imperial`);
 
+    // set format the api_call variable to json
+    // and set to data variable
     const data = await api_call.json();
     console.log(data);
+
+    // if checks to see if the input values are true
+    // if true, set state to data values
+    // if false, setState to empty values except
+    // error which will be set to 'Please enter values'
     if(items.city && items.country) {
       this.setState({
         temp: data.main.temp,
