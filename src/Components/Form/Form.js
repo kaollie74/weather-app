@@ -4,7 +4,10 @@ class Form extends Component {
 
   render (){
     return (
-      <h1>Form</h1>
+      <form>
+        <input type='text' name='city' placeholder='city..'/>
+        <input type='text' name='country' placeholder='Country...'/>
+      </form>
     )
   }
 

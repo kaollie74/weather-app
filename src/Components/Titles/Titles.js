@@ -1,11 +1,13 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 
 class Titles extends Component {
 
-  render () {
+  render() {
     return (
-      <h1>Titles</h1>
+      <div>
+        <h1>Weather Finder</h1>
+      </div>
     );
   }
 
