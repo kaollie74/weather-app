@@ -7,7 +7,7 @@ import Weather from '../Weather/Weather';
 
 //import api key
 require('dotenv').config();
-const WEATHER_API_KEY= '9ea676ae955d21c9805b7986312a2652';
+const WEATHER_API_KEY= process.env.WEATHER_API_KEY;
 
 
 
@@ -17,9 +17,9 @@ const WEATHER_API_KEY= '9ea676ae955d21c9805b7986312a2652';
 
 class App extends Component {
 
-  // componentDidMount () {
-  //   this.getWeather();
-  // }
+ state = {
+
+ }
   
   getWeather = async (items) => {
 
