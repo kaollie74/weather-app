@@ -45,7 +45,7 @@ class App extends Component {
     // if true, set state to data values
     // if false, setState to empty values except
     // error which will be set to 'Please enter values'
-    if(items.city && items.country) {
+    if (items.city && items.country) {
       this.setState({
         temp: data.main.temp,
         city: data.name,
@@ -57,31 +57,49 @@ class App extends Component {
     } else {
       this.setState({
         temp: '',
-        city:  '',
+        city: '',
         humidity: '',
         description: '',
         error: 'Please enter values'
       })
     }
-    
+
 
   }
 
   render() {
     return (
-      <div className="App">
+      <div>
+        <div className="wrapper">
+          <div className="main">
+            <div className="container">
+              <div className="row">
+                <div className="col-xs-5 title.container">
+                  <Titles />
+                </div>
+                <div className="col-xs-7 form-container">
 
-        <Titles />
-        <Form getWeather={this.getWeather} />
-        <Weather
-          temperature = {this.state.temp}
-          city = {this.state.city}
-          country = {this.state.country}
-          humidity = {this.state.humidity}
-          description = {this.state.description}
-          error = {this.state.error}
-        />
+                  <Form getWeather={this.getWeather} />
+                  <Weather
+                    temperature={this.state.temp}
+                    city={this.state.city}
+                    country={this.state.country}
+                    humidity={this.state.humidity}
+                    description={this.state.description}
+                    error={this.state.error}
+                  />
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
+
+
     );
   }
 }
