@@ -12,15 +12,24 @@ class Form extends Component {
     })
   }
 
+  submitWeather = () => {
+    this.props.getWeather(this.state);
+
+    this.setState({
+      city: '',
+      country: ''
+    })
+  }
+
   render (){
 
     console.log('This is State', this.state)
 
     return (
       <div>
-        <input type='text' name='city' placeholder='city..' onChange= {(event) => this.handlChange(event, 'city')}/>
-        <input type='text' name='country' placeholder='Country...' onChange= {(event) => this.handlChange(event, 'country')} />
-        <button onClick= {() => this.props.getWeather(this.state)}>Get Weather</button>
+        <input type='text' value={this.state.city} name='city' placeholder='city..' onChange= {(event) => this.handlChange(event, 'city')}/>
+        <input type='text' value={this.state.country} name='country' placeholder='Country...' onChange= {(event) => this.handlChange(event, 'country')} />
+        <button onClick= {() => this.submitWeather()}>Get Weather</button>
 
       </div>
     )
