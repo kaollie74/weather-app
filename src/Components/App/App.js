@@ -70,7 +70,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Hello</h1>
+
         <Titles />
         <Form getWeather={this.getWeather} />
         <Weather
