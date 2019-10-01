@@ -18,7 +18,12 @@ const WEATHER_API_KEY= process.env.WEATHER_API_KEY;
 class App extends Component {
 
  state = {
-
+    temp: '',
+    city: '',
+    country: '',
+    humidity: '',
+    description: '',
+    error: ''
  }
   
   getWeather = async (items) => {
@@ -31,6 +36,15 @@ class App extends Component {
 
     const data = await api_call.json();
     console.log(data);
+
+    this.setState ({
+      temp: data.main.temp,
+      city: data.name,
+      country: data.sys.country,
+      humidity: data.main.humidity,
+      description: data.weather[0].description,
+      error: ''
+    })
 
   }
   
