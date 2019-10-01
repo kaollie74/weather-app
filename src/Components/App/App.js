@@ -4,6 +4,7 @@ import './App.css';
 // import components
 import Form from '../Form/Form';
 import Titles from '../Titles/Titles';
+import Weather from '../Weather/Weather';
 
 class App extends Component {
   
@@ -13,6 +14,7 @@ class App extends Component {
         <h1>Hello</h1>
         <Titles/>
         <Form/>
+        <Weather/>
       </div>
     );
   }
