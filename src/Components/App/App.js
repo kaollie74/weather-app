@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
+
 // import components
 import Form from '../Form/Form';
 import Titles from '../Titles/Titles';
 import Weather from '../Weather/Weather';
 
-//import api key
+//import api key from .env file
 require('dotenv').config();
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
@@ -80,6 +81,7 @@ class App extends Component {
                 <div className="col-xs-7 form-container">
 
                   <Form getWeather={this.getWeather} />
+                  
                   <Weather
                     temperature={this.state.temp}
                     city={this.state.city}
