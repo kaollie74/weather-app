@@ -6,6 +6,10 @@ import Form from '../Form/Form';
 import Titles from '../Titles/Titles';
 import Weather from '../Weather/Weather';
 
+
+
+
+
 //import api key from .env file
 require('dotenv').config();
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
@@ -61,7 +65,7 @@ class App extends Component {
         city: '',
         humidity: '',
         description: '',
-        error: 'Please enter values'
+        error: 'Please enter values Ex: City: Minneapolis Contry: US'
       })
     }
 
@@ -75,7 +79,7 @@ class App extends Component {
           <div className="main">
             <div className="container">
               <div className="row">
-                <div className="col-xs-5 title.container">
+                <div className="col-xs-5 title-container">
                   <Titles />
                 </div>
                 <div className="col-xs-7 form-container">
